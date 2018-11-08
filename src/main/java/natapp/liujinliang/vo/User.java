@@ -3,6 +3,16 @@ package natapp.liujinliang.vo;
 public class User {
 	private String username;
 	private String password;
+	private Boolean remebermy;
+
+	public Boolean getRemebermy() {
+		return remebermy;
+	}
+
+	public void setRemebermy(Boolean remebermy) {
+		this.remebermy = remebermy;
+	}
+
 	public String getUsername() {
 		return username;
 	}

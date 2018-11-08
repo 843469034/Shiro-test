@@ -38,6 +38,7 @@
 		<property name="realm" ref="realm"></property>
 		<property name="sessionManager" ref="sessionManager"/>
 		<property name="cacheManager" ref="redisCacheManager"/>
+		<property name="rememberMeManager" ref="cookieRememberMeManager"/>
 	</bean>
 	
 	<bean id="realm" class="natapp.liujinliang.realm.CustomRealm">
@@ -57,4 +58,15 @@
 	</bean>
 
 	<bean  class="natapp.liujinliang.cache.RedisCacheManager" id ="redisCacheManager" />
+
+	<bean class="org.apache.shiro.web.mgt.CookieRememberMeManager" id="cookieRememberMeManager">
+		<property name="cookie" value="simpleCookie"/>
+		
+		
+	</bean>
+	<bean class="org.apache.shiro.web.servlet.SimpleCookie" id="simpleCookie">
+	<constructor-arg value="remebermy"/>
+		<property name="maxAge" value="200000000"/>
+
+	</bean>
 </beans>

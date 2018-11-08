@@ -32,6 +32,7 @@ public class UserController {
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
 		
 		try {
+			token.setRememberMe(user.getRemebermy());
 			subject.login(token);
 		} catch (Exception e) {
 			return e.getMessage();
